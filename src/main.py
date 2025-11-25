@@ -20,7 +20,7 @@ def get_path_from_arguments(args) -> str:
 def main():
     path = get_path_from_arguments(sys.argv[1:])
 
-    # Выбор ридера в зависимости от расширения файла
+    # Выбор в зависимости от расширения файла
     _, file_extension = os.path.splitext(path)
     if file_extension.lower() in ['.yaml', '.yml']:
         reader = YamlDataReader()
