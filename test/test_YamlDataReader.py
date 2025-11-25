@@ -19,7 +19,7 @@ class TestYamlDataReader:
         p = tmpdir.mkdir("datadir").join("test_data.yaml")
         with open(str(p), 'w', encoding='utf-8') as f:
             f.write(yaml_content)
-        
+
         expected_data = {
             "Иванов Иван Иванович": [
                 ("математика", 91), ("химия", 100)
@@ -28,7 +28,7 @@ class TestYamlDataReader:
                 ("русский язык", 87), ("литература", 78)
             ]
         }
-        
+
         # Тестируем чтение
         reader = YamlDataReader()
         result = reader.read(str(p))
@@ -38,7 +38,7 @@ class TestYamlDataReader:
         p = tmpdir.mkdir("datadir").join("empty.yaml")
         with open(str(p), 'w', encoding='utf-8') as f:
             f.write("")
-        
+
         reader = YamlDataReader()
         result = reader.read(str(p))
         assert result == {}
